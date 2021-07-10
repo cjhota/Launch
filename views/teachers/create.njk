@@ -1,61 +1,54 @@
 {% extends "layout.njk" %}
-
-
 {% block content %}
-    <form class="card" method="POST" action="/teachers">
-        <section class="avatar" style="background:
-        url('https://source.unsplash.com/collection/4981365/500x500') no-repeat center center / cover" >
-
-        </section>
-        <section class="details">
-
-            <h3>New Teacher</h3>
-            <div class="item">
-              <div>Avatar Url</div>
-              <div>
-                <input type="url" name="avatar_url" placeholder="https://">
-              </div>
+  <form class="card" method="POST" action="/teachers">
+    <section
+      class="avatar"
+      style="background: url('https://source.unsplash.com/collection/4981365/500x500') no-repeat center center / cover"></section>
+    <section class="details">
+      <h3>New Teacher</h3>
+      <div class="item">
+        <div>Avatar Url</div>
+        <div>
+          <input type="url" name="avatar_url" placeholder="https://"></div>
+        </div>
+        <div class="item">
+          <div>Nome completo</div>
+          <div>
+            <input type="text" name="name" id="" placeholder=" Ana casa maior"></div>
           </div>
-
-            <div class="item">
-                <div>Nome completo</div>
-                <div>
-                  <input type="text" name="name" id="" placeholder=" Ana casa maior">
-                </div>
+          <div class="item">
+            <div>Data de Nascimente</div>
+            <div>
+              <!-- <input type="date" name="birth" id=""> -->
+              <input name="birth" placeholder="01/01/2020" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></div>
             </div>
             <div class="item">
-                <div>Data de Nascimente</div>
-                <div>
-                  <!-- <input type="date" name="birth" id=""> -->
-                  <input name="birth" placeholder="01/01/2020" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
-                </div>
-            </div> 
-            <div class="item">
-                <div>Grau de escolaridade</div>
-                <div>
-                  <select name="select" size="0" id="">
-                    <option value="valor0" selected> </option>
-                    <option value="valor1">Ensino Médio Completo</option>
-                    <option value="valor2">Ensino Superior Completo</option>
-                    <option value="valor3">Mestrado</option>
-                    <option value="valor4">Doutorado</option>
-                  </select>
-                </div>
-            </div> 
+              <div>Grau de escolaridade</div>
+              <div>
+                <select name="select" size="0" id="">
+                  <option value="valor0" selected="selected"></option>
+                  <option value="valor1">Ensino Médio Completo</option>
+                  <option value="valor2">Ensino Superior Completo</option>
+                  <option value="valor3">Mestrado</option>
+                  <option value="valor4">Doutorado</option>
+                </select>
+              </div>
+            </div>
             <div class="item">
               <div>Tipo de Ensino</div>
               <div>
-                <span><input type="radio" name="presencial" id="" value="pre" checked>Presencial</span>
-                <span><input type="radio" name="adistancia" id="" value="ead">À distância</span>
-              </div>
-          </div> 
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    <input type="text" name="serviçes" placeholder="serviços prestados por virgulas">
-                </div>                
-            </div>
-            <button type="submit">Salvar</button>
-        </section>
-    </form>
-{% endblock content %}
+                <span>
+                  <input type="radio" name="presencial" id="" value="pre" checked="checked">Presencial</span>
+                  <span>
+                    <input type="radio" name="adistancia" id="" value="ead">À distância</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>Acompanhamento</div>
+                  <div>
+                    <input type="text" name="serviçes" placeholder="serviços prestados por virgulas"></div>
+                  </div>
+                  <button type="submit">Salvar</button>
+                </section>
+              </form>
+            {% endblock content %}
