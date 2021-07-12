@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://www.google.com",
+      "name": "aluno",
+      "birth": 429321600000,
+      "typeofclass": "presencial",
+      "select": "valor4",
+      "services": "Matemática",
+      "created_at": 1626129156141
+    }
+  ]
+}
