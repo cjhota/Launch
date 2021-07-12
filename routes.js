@@ -15,7 +15,10 @@ routes.get("/teachers/create", function (req, res) {
 })
 
 routes.post("/teachers", function (req, res) {
-    return res.send("Recebido")
+
+    const keys = Object.keys(req.body)
+
+    return res.send(req.body)
 })
 
 // routes.post("/teachers", function(req, res) {
