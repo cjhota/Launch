@@ -1,18 +1,26 @@
 const fs = require("fs");
 const data = require("./data.json");
+const { age } = require("./utils");
 
 //show
 exports.show = function (req, res) {
   //req.params
   const { id } = req.params;
 
-  const foundTeacher = data.teachers.find(function (teachers) {
-    return teachers.id == id;
+  const foundTeacher = data.teachers.find(function (teacher) {
+    return teacher.id == id;
   });
 
   if (!foundTeacher) return res.send("Teacher not found");
 
-  return res.render("teachers/show", { teachers: foundTeacher });
+  const teacher = {
+    ...foundTeacher,
+    age: age(foundTeacher.birth),
+    services: foundTeacher.services.split(","),
+    created_at: "",
+  };
+
+  return res.render("teachers/show", { teacher });
 };
 
 //Create

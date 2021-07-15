@@ -17,9 +17,18 @@
                 <div>{{ teachers.select }}</div>
             </div>
             <div class="item">
+                <div>Tipo de Ensino</div>
+                <div>
+                    <span>
+                        {{ "Presencial" if teacher.typeofclass == "presencial"  else "À
+          distância" }}
+                    </span>
+                </div>
+            </div>
+            <div class="item">
                 <div>Acompanhamento</div>
                 <div>
-                    {% for service in services %}
+                    {% for service in teacher.services %}
                         <span>
                             {{ service }}
                         </span>
