@@ -17,7 +17,9 @@ exports.show = function (req, res) {
     ...foundTeacher,
     age: age(foundTeacher.birth),
     services: foundTeacher.services.split(","),
-    created_at: "",
+    created_at: new Intl.DateTimeFormat("pt-BR").format(
+      foundTeacher.created_at
+    ),
   };
 
   return res.render("teachers/show", { teacher });
@@ -58,6 +60,20 @@ exports.post = function (req, res) {
   });
 
   //   return res.send(req.body);
+};
+
+//Edit
+
+exports.edit = function (req, res) {
+  const { id } = req.params;
+
+  const foundTeacher = data.teachers.find(function (teacher) {
+    return teacher.id == id;
+  });
+
+  if (!foundTeacher) return res.send("Teacher not found");
+
+  return res.render("teachers/edit", { teacher: foundTeacher });
 };
 
 //updade
