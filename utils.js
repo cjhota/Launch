@@ -21,13 +21,28 @@ module.exports = {
     const month = `0${date.getUTCMonth() + 1}`.slice(-2); //mm
     const day = `0${date.getUTCDate()}`.slice(-2); //dd
 
-    // return `${year}-${month}-${day}`   //return yyyy-mm-dd iso
-    return {
-      day,
-      month,
-      year,
-      iso: `${year}-${month}-${day}`,
-      birthDay: `${day}/${month}`,
-    };
+    return `${year}-${month}-${day}`; //return yyyy-mm-dd iso
+    // return {
+    //   day,
+    //   month,
+    //   year,
+    //   iso: `${year}-${month}-${day}`,
+    //   birthDay: `${day}/${month}`,
+    // };
+    console.log(`${year}-${month}-${day}`);
+  },
+  graduation: function (element) {
+    switch (element) {
+      case "medio":
+        return "Ensino Médio Completo";
+      case "superior":
+        return "Ensino Superior Completo";
+      case "doutorado":
+        return "Doutorado";
+      case "mestrado":
+        return "Mestrado";
+      default:
+        break;
+    }
   },
 };

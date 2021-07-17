@@ -6,7 +6,7 @@
       "name": "aluno",
       "birth": 429321600000,
       "typeofclass": "presencial",
-      "select": "valor4",
+      "select": "mestrado",
       "services": "Matemática",
       "created_at": 1626129156141
     },
@@ -16,7 +16,7 @@
       "name": "aluno",
       "birth": 426729600000,
       "typeofclass": "ead",
-      "select": "valor2",
+      "select": "doutorado",
       "services": "Matemática, Química Quântica",
       "created_at": 1626465464597
     }
