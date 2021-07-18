@@ -31,6 +31,7 @@ module.exports = {
     // };
     console.log(`${year}-${month}-${day}`);
   },
+
   graduation: function (element) {
     switch (element) {
       case "medio":

@@ -36,7 +36,7 @@ exports.post = function (req, res) {
     }
   }
 
-  let { avatar_url, name, birth, select, typeofclass, services } = req.body;
+  let { avatar_url, name, birth, education, typeofclass, services } = req.body;
 
   birth = Date.parse(birth);
   const created_at = Date.now();
@@ -48,7 +48,7 @@ exports.post = function (req, res) {
     name,
     birth,
     typeofclass,
-    select,
+    education,
     services,
     created_at,
   });
@@ -76,7 +76,7 @@ exports.edit = function (req, res) {
   const teacher = {
     ...foundTeacher,
     birth: date(foundTeacher.birth),
-    select: graduation(foundTeacher.select),
+    education: graduation(foundTeacher.education),
   };
 
   return res.render("teachers/edit", { teacher });
