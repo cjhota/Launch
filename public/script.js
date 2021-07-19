@@ -1,19 +1,14 @@
-// const modalOverlay = document.querySelector('.modal-overlay')
-// const modal = document.querySelector('.modal')
-// const cards = document.querySelectorAll('.card')
+const correntPage = location.pathname
+const menuItems =  document.querySelectorAll("header .links a")
 
-// for (let card of cards) {
-//     card.addEventListener("click", function(){
-//         const videoId = card.getAttribute('id')
-//         window.location.href = `/video?id=${videoId}`
-
-//         // modalOverlay.classList.add('active')
-//         // modalOverlay.querySelector('iframe').src = `https://youtube.com/embed/${videoId}`
-
-//     })
+// for(item of menuItems) {
+//     if( correntPage == item.getAtribute("href")) {
+//         item.classList.add("active")
+//     }
 // }
 
-// document.querySelector('.close-modal').addEventListener('clikc', function(){
-//     modalOverlay.classList.remove('.active')
-//     modalOverlay.querySelector('iframe').scr = ""
-// })
+for(item of menuItems) {
+    if( correntPage.includes(item.getAttribute("href"))) {
+        item.classList.add("active")
+    }
+}

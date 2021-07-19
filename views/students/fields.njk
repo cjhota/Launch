@@ -1,0 +1,94 @@
+<div class="item">
+    <div>Avatar Url</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{ student.avatar_url }}" />
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome completo</div>
+    <div>
+        <input type="text" name="name" id="" placeholder="Nome completo" value="{{ student.name }}" />
+    </div>
+</div>
+
+<div class="item">
+    <div>E-mail</div>
+    <div>
+        <input type="email" name="email" id="" placeholder="Nome@nome.com" value="{{ student.name }}" />
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de Nascimente</div>
+    <div>
+        <input type="date" name="birth" id="" value="{{ student.birth }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <div>
+        <select name="education">
+            <option value="medio" class="option" {% if student.education == "medio" %} selected {% endif %}>Ensino Médio
+                Completo</option>
+            <option value="superior" class="option" {% if student.education == "superior" %} selected {% endif %}>Ensino
+                Superior Completo</option>
+            <option value="mestrado" class="option" {% if student.education == "mestrado" %} selected {% endif %}>
+                Mestrado</option>
+            <option value="doutorado" class="option" {% if student.education == "doutorado" %} selected {% endif %}>
+                Doutorado</option>
+        </select>
+    </div>
+</div>
+
+
+<div class="item">
+    <div>Tipo de Ensino</div>
+    <div>
+        <span><input type="radio" name="typeofclass" id="" value="presencial"
+                {% if student.typeofclass == "presencial" %} checked {% endif %} />Presencial</span>
+        <span><input type="radio" name="typeofclass" id="" value="ead" {% if student.typeofclass == "ead" %} checked
+                {% endif %} />À distância</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Tipo Sanguíneo</div>
+    <div>
+        <select name="blood">
+            <option value="vazio" class="option" {% if student.education == "vazio" %} selected {% endif %}></option>
+            <option value="A1" class="option" {% if student.education == "A1" %} selected {% endif %}>A+</option>
+            <option value="A0" class="option" {% if student.education == "A0" %} selected {% endif %}>A-</option>
+            <option value="B1" class="option" {% if student.education == "B1" %} selected {% endif %}>B+</option>
+            <option value="B0" class="option" {% if student.education == "B0" %} selected {% endif %}>B-</option>
+            <option value="AB1" class="option" {% if student.education == "AB1" %} selected {% endif %}>AB+</option>
+            <option value="AB0" class="option" {% if student.education == "AB0" %} selected {% endif %}>AB-</option>
+            <option value="O1" class="option" {% if student.education == "O1" %} selected {% endif %}>O+</option>
+            <option value="O0" class="option" {% if student.education == "O0" %} selected {% endif %}>O-</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Peso (Kg)</div>
+    <div>
+        <input type="number" name="weight" id="" value="{{ student.weight }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Altura (Cm)</div>
+    <div>
+        <input type="number" name="height" id="" value="{{ student.height }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Acompanhamento</div>
+    <div>
+        <input type="text" name="services" placeholder="serviços prestados por virgulas" value="{{ student.services }}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
