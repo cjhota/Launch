@@ -13,16 +13,21 @@
             </tr>
         </thead>
         <tbody>
-            {% for student in students %}
-            <tr>
-            <td>
-                <span style="background-image: url({{student.avatar_url}})"></span>
-                {{student.name}}</td>
-            <td>{{student.services}}</td>
-
-            <td><a href="/students/{{student.id}}">Ver</a></td>
-            </tr>
-            {% endfor %}
+             {% for student in students %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{ student.avatar_url }})"></span>
+                            {{ student.name }}</td>
+                        <td>
+                            {% for service in student.services %}
+                                <span class="services">{{ service }}</span>
+                        {% endfor %}
+                            </td>
+                        <td>
+                            <a href="/students/{{ student.id }}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
         </tbody>
     </table>
 </div>

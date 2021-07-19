@@ -4,37 +4,17 @@ const { age, date, graduation } = require("../utils");
 
 exports.index = function (req, res) {
   const teachers = data.teachers.map(function(teacher){
-     teacher.services = teacher.services.split(",")
+     return {
+       ...teacher,
+       services: teacher.services.split(",")
+     }
+      
   })
 
+  // console.log(teachers)
 
-  console.log(teachers)
-
-  return res.render("teachers/index", {teachers: data.teachers});
+  return res.render("teachers/index", {teachers});
 },
-
-//show
-exports.show = function (req, res) {
-  //req.params
-  const { id } = req.params;
-
-  const foundTeacher = data.teachers.find(function (teacher) {
-    return teacher.id == id;
-  });
-
-  if (!foundTeacher) return res.send("Teacher not found");
-
-  const teacher = {
-    ...foundTeacher,
-    age: age(foundTeacher.birth),
-    services: foundTeacher.services.split(","),
-    created_at: new Intl.DateTimeFormat("pt-BR").format(
-      foundTeacher.created_at
-    ),
-  };
-
-  return res.render("teachers/show", { teacher });
-};
 
 exports.create =  function (req, res) {
   return res.render("teachers/create");
@@ -77,6 +57,29 @@ exports.post = function (req, res) {
   //   return res.send(req.body);
 };
 
+//show
+exports.show = function (req, res) {
+  //req.params
+  const { id } = req.params;
+
+  const foundTeacher = data.teachers.find(function (teacher) {
+    return teacher.id == id;
+  });
+
+  if (!foundTeacher) return res.send("Teacher not found");
+
+  const teacher = {
+    ...foundTeacher,
+    age: age(foundTeacher.birth),
+    services: foundTeacher.services.split(","),
+    created_at: new Intl.DateTimeFormat("pt-BR").format(
+      foundTeacher.created_at
+     ),
+  };
+
+  return res.render("teachers/show", { teacher });
+};
+
 //Edit
 exports.edit = function (req, res) {
   const { id } = req.params;
@@ -89,7 +92,7 @@ exports.edit = function (req, res) {
 
   const teacher = {
     ...foundTeacher,
-    birth: date(foundTeacher.birth),
+    birth: date(foundTeacher.birth).iso
     // education: graduation(foundTeacher.education),
   };
 

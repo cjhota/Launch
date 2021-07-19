@@ -13,39 +13,24 @@ const {
 //     });
 //   },
 
-exports.index = function(req, res) {
- 
-}
+exports.index = function (req, res) {
+    const students = data.students.map(function (student) {
+      return {
+        ...student,
+        services: student.services.split(",")
+      }
 
-  //show
-  exports.show = function (req, res) {
-    //req.params
-    const {
-      id
-    } = req.params;
+    })
 
-    const foundStudent = data.students.find(function (student) {
-      return student.id == id;
+    //  console.log(students)
+
+    return res.render("students/index", {
+      students
     });
+  },
 
-    if (!foundStudent) return res.send("Student not found");
-
-    const student = {
-      ...foundStudent,
-      age: age(foundStudent.birth),
-      // services: foundStudent.services.split(","),
-      // created_at: new Intl.DateTimeFormat("pt-BR").format(
-      //   foundStudent.created_at
-      // // ),
-    };
-
-    return res.render("students/show", {
-      student
-    });
-  };
-
-// create
-exports.create = function (req, res) {
+  // create
+  exports.create = function (req, res) {
     return res.render("students/create");
   }
 
@@ -61,17 +46,19 @@ exports.post = function (req, res) {
   }
 
   birth = Date.parse(req.body.birth);
-  // const created_at = Date.now();
-  let id = 1;
-  const lastStudent = data.students[data.students.length -1]
 
-  if(!lastStudent) {
+  // const created_at = Date.now();
+
+  let id = 1;
+  const lastStudent = data.students[data.students.length - 1]
+
+  if (lastStudent) {
     id = lastStudent.id + 1
   }
 
   data.students.push({
-    ...req.body,
     id,
+    ...req.body,
     birth,
   });
 
@@ -82,6 +69,33 @@ exports.post = function (req, res) {
   });
 
   //   return res.send(req.body);
+};
+
+//show
+exports.show = function (req, res) {
+  //req.params
+  const {
+    id
+  } = req.params;
+
+  const foundStudent = data.students.find(function (student) {
+    return student.id == id;
+  });
+
+  if (!foundStudent) return res.send("Student not found");
+
+  const student = {
+    ...foundStudent,
+    birth: date(foundStudent.birth).birthDay,
+    services: foundStudent.services.split(","),
+    // created_at: new Intl.DateTimeFormat("pt-BR").format(
+    //   foundStudent.created_at
+    // // ),
+  };
+
+  return res.render("students/show", {
+    student
+  });
 };
 
 //Edit

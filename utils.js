@@ -21,15 +21,15 @@ module.exports = {
     const month = `0${date.getUTCMonth() + 1}`.slice(-2); //mm
     const day = `0${date.getUTCDate()}`.slice(-2); //dd
 
-    return `${year}-${month}-${day}`; //return yyyy-mm-dd iso
-    // return {
-    //   day,
-    //   month,
-    //   year,
-    //   iso: `${year}-${month}-${day}`,
-    //   birthDay: `${day}/${month}`,
-    // };
-    console.log(`${year}-${month}-${day}`);
+    // return `${year}-${month}-${day}`; //return yyyy-mm-dd iso
+    return {
+      day,
+      month,
+      year,
+      iso: `${year}-${month}-${day}`,
+      birthDay: `${day}/${month}`,
+    };
+    // console.log(`${year}-${month}-${day}`);
   },
 
   graduation: function (element) {

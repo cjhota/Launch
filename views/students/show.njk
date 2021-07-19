@@ -12,7 +12,11 @@
             </div>
             <div class="item">
                 <div>Idade</div>
-                <div>{{ student.age }}</div>
+                <div>{{ student.birth }}</div>
+            </div>
+             <div class="item">
+                <div>E-mail</div>
+                <div>{{ student.email }}</div>
             </div>
             <div class="item">
                 <div>Grau de escolaridade</div>
@@ -38,8 +42,16 @@
                 </div>
             </div>
             <div class="item">
-                <div>Desde</div>
-                <div>{{ student.created_at }}</div>
+                <div>Tipo Sanguíneo</div>
+                <div>{{ student.blood }}</div>
+            </div>
+            <div class="item">
+                <div>Altura</div>
+                <div>{{ student.weight }}</div>
+            </div>
+            <div class="item">
+                <div>Peso</div>
+                <div>{{ student.height }}</div>
             </div>
             <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
         </section>
