@@ -6,12 +6,16 @@ const {
   graduation
 } = require("../utils");
 
-exports.index = function (req, res) {
+// exports.index = function (req, res) {
 
-    return res.render("students/index", {
-      students: data.students
-    });
-  },
+//     return res.render("students/index", {
+//       students: data.students
+//     });
+//   },
+
+exports.index = function(req, res) {
+ 
+}
 
   //show
   exports.show = function (req, res) {
