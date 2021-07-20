@@ -3,7 +3,8 @@ const data = require("../data.json");
 const {
   age,
   date,
-  graduation
+  graduation,
+  grade
 } = require("../utils");
 
 // exports.index = function (req, res) {
@@ -17,7 +18,8 @@ exports.index = function (req, res) {
     const students = data.students.map(function (student) {
       return {
         ...student,
-        services: student.services.split(",")
+        // services: student.services.split(",")
+        education:grade(student.education)
       }
 
     })
@@ -30,9 +32,10 @@ exports.index = function (req, res) {
   },
 
   // create
+ 
   exports.create = function (req, res) {
     return res.render("students/create");
-  }
+  },
 
 //post
 exports.post = function (req, res) {
@@ -87,7 +90,8 @@ exports.show = function (req, res) {
   const student = {
     ...foundStudent,
     birth: date(foundStudent.birth).birthDay,
-    services: foundStudent.services.split(","),
+    education: grade(foundStudent.education)
+    // services: foundStudent.services.split(","),
     // created_at: new Intl.DateTimeFormat("pt-BR").format(
     //   foundStudent.created_at
     // // ),
@@ -112,7 +116,7 @@ exports.edit = function (req, res) {
 
   const student = {
     ...foundStudent,
-    birth: date(foundStudent.birth),
+    birth: date(foundStudent.birth).iso,
     // education: graduation(foundStudent.education),
   };
 

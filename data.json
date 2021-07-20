@@ -5,13 +5,18 @@
       "name": "Ana",
       "email": "ana@ana.com",
       "birth": 924134400000,
-      "education": "superior",
-      "typeofclass": "presencial",
-      "blood": "AB1",
-      "weight": "80",
-      "height": "178",
-      "services": "Estudante",
+      "education": "7EF",
+      "hoursweek": "8",
       "id": 1
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
+      "name": "Jose Ribeiro",
+      "email": "josekcarvalho116@gmail.com",
+      "birth": 1405641600000,
+      "education": "5EF",
+      "hoursweek": "7"
     }
   ],
   "teachers": [

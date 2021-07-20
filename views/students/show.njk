@@ -14,46 +14,19 @@
                 <div>Idade</div>
                 <div>{{ student.birth }}</div>
             </div>
-             <div class="item">
+            <div class="item">
                 <div>E-mail</div>
                 <div>{{ student.email }}</div>
             </div>
             <div class="item">
                 <div>Grau de escolaridade</div>
-                <div>{{ student.select }}</div>
+                <div>{{ student.education }}</div>
             </div>
             <div class="item">
-                <div>Tipo de Ensino</div>
-                <div>
-                    <span>
-                        {{ "Presencial" if student.typeofclass == "presencial"  else "À
-          distância" }}
-                    </span>
-                </div>
+                <div>Carga Horária</div>
+                <div>{{ student.hoursweek }} Hora por Semana</div>
             </div>
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for service in student.services %}
-                        <span>
-                            {{ service }}
-                        </span>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="item">
-                <div>Tipo Sanguíneo</div>
-                <div>{{ student.blood }}</div>
-            </div>
-            <div class="item">
-                <div>Altura</div>
-                <div>{{ student.weight }}</div>
-            </div>
-            <div class="item">
-                <div>Peso</div>
-                <div>{{ student.height }}</div>
-            </div>
+            <div class="item"></div>
             <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
-        </section>
-    </div>
-{% endblock content %}
+            </section>
+        {% endblock content %}

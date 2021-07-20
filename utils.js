@@ -46,4 +46,17 @@ module.exports = {
         break;
     }
   },
+  grade: function (element) {
+    switch (element) {
+      case '5EF': return '5° Ano do Fundamental';
+      case '6EF': return '6° Ano do Fundamental';
+      case '7EF': return '7° Ano do Fundamental';
+      case '8EF': return '8° Ano do Fundamental';
+      case '9EF': return '9° Ano do Fundamental';
+      case '1EM': return '1° Ano do Médio';
+      case '2EM': return '2° Ano do Médio';
+      case '3EM': return '3° Ano do Médio';
+      default: break;
+    }
+  }
 };
