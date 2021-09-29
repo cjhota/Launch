@@ -8,6 +8,7 @@
 git clone https://github.com/cjhota/Launch.git
 ```
 - instalar dependências
+- 
  ```
 npm install
 ```
